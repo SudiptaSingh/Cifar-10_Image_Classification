@@ -47,3 +47,103 @@ Images choose randomly.
 2.)	Android oriented part in which we are trying to implement the extra functionalities and try to remove bugs proposed in master 
 repositories. Functionalities like automatic wallpaper download according to tags and     3D-cube image viewer.
 
+Pre Information:-
+
+•	System used in analysis and training of models :-
+
+	Lenovo Y5070 	
+Configuration:- 
+•	Windows 10 Home Single Language 64-bit
+•	Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+•	NVIDIA GeForce GTX 960M
+•	8192MB RAM
+
+	Lenovo G5080
+Configuration:-
+•	Windows 10 Home Single Language 64-bit
+•	Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz
+•	Intel(R) HD Graphics 5500
+•	8192MB RAM
+
+	Customized Laptop
+Configuration:-
+•	Windows 10 Pro 64-bit
+•	Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz (Desktop Processor)
+•	NVIDIA GeForce GTX 970M (Desktop Graphics card)
+•	8192MB RAM
+•	Parameters Considered and there default values:- 
+	Number of iterations ( 15000 )
+	Size of feature detector ( Kernal = 5 )
+	Maxpool Kernal and Stride ( Kernal = 2, Stride = 2 )
+	Crop Images (24 )
+	Batch Size ( 100 )
+
+Analysis:-
+i.	Iterations v/s Accuracy :-
+(No. of Iterations 10-30000)
+  
+ii.	Feature Detector v/s Accuracy :-
+( 4, 5, 6 ,7, 8 )
+  
+iii.	Crop Images v/s Accuracy :-
+(10, 15, 20, 24, 30 )
+  
+iv.	Batch Size v/s Accuracy :-
+(200, 500, 1000, 1500 )
+ 
+v.	{Conv.(5,64) + Maxpooling(2,2)}x2 + {Conv.(5,32) + Maxpooling(3,3)} :-
+
+Crop size = 24
+Accuracyachieved = 65.9%
+Time = 50min 43sec
+No. of epochs = 15000
+Batch Size = 100 
+
+vi.	{Conv.(5,64) + Maxpooling(2,2)}x3 :-
+
+Crop size = 24
+Accuracyachieved = 68.2%
+Time = 44min 46sec
+No. of epochs = 15000
+Batch Size = 100 
+
+vii.	{Conv.(5,64) + Maxpooling(2,2)}x2
+{F.C. Hidden Layers Neurons – (256-128-64)}:-
+
+Crop size = 24
+Accuracy achieved = 68.8%
+Time = 38min 34sec
+No. of epochs = 15000
+Batch Size = 100 
+
+viii.	*{Conv.(5,64) + Maxpooling(2,2)}x3
+{F.C. Hidden Layers Neurons –                        (256-128-64-32)}:-
+
+Crop size = 30
+Accuracy achieved = 73.9%
+Time = 38min 34sec
+No. of epochs = 15000
+Batch Size = 100
+
+
+
+ix.	*{Conv.(5,64) + Maxpooling(2,2)}x3
+{F.C. Hidden Layers Neurons –                        (256-128-64-32)}:-
+
+Crop size = 30
+Accuracy achieved = 75.8%
+Time = 38min 34sec
+No. of epochs = 30000
+Batch Size = 100
+
+*Maximum Accuracy achieved till now
+
+x.	{Conv.(5,128) + Maxpooling(2,2)} +
+{Conv.(5,64) + Maxpooling(2,2)} +
+{Maxpooling(2,2)} :-
+
+Crop size = 24
+Accuracy achieved = 69.2%
+Time = 44min 26sec
+No. of epochs = 15000
+Batch Size = 100
